@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consoleordreavion.FXMLDocumentController">
+    <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Adresse du SGCA :" />
+                  <TextField fx:id="TxtIP" text="localhost" />
+                  <Button fx:id="ButValiderIP" mnemonicParsing="false" onAction="#ChangeIP" text="Valider" />
+               </children>
+            </HBox>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <VBox alignment="CENTER" prefHeight="302.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Avion :" />
+                        <TextField fx:id="TxtNumAvion" maxWidth="100.0" />
+                        <Label text="Changer :" />
+                        <ChoiceBox fx:id="ChoiceInstruction" prefWidth="150.0" />
+                          <Label fx:id="label" minHeight="16" minWidth="69" text="Nouvelle valeur :" />
+                        <TextField fx:id="TxtValue" maxWidth="100.0" />
+                        <Button fx:id="ButValider" mnemonicParsing="false" onAction="#EnvoyerRequete" text="Valider" />
+                     </children>
+                  </VBox>
+               </center>
+               <top>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Instructions pour les Avions" textFill="#4706fc">
+                           <font>
+                              <Font name="High Tower Text" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>

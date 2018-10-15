@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  SGCA:
+    image: gcc
+    volumes:
+      - ./Projet_Avion/:/src
+    command: /src/SGCA/requieres.sh
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+  Avion:
+    image: gcc
+    volumes:
+      - ./Projet_Avion/:/src
+    command: /src/Avion/requieres.sh
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+  Console_Vue_Avions:
+    image: platpus/javafx
+    volumes:
+      - ./Consoles_Avion/ConsoleAvion/:/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: /src/requieres.sh
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=$DISPLAY
+  Console_Controle_Avions:
+    image: platpus/javafx
+    volumes:
+      - ./Consoles_Avion/ConsoleOrdreAvion/:/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: /src/requieres.sh
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=$DISPLAY
